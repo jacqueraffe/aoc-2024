@@ -7,8 +7,15 @@ for x in f:
     arr2.append(int(line[3]))
 arr1.sort()
 arr2.sort()
-dist = 0
-for i in range(len(arr1)):
-    print(arr2[i] - arr1[i], arr2[i], arr1[i])
-    dist += abs(arr2[i] - arr1[i])
-print(dist)
+dict = {}
+for i in arr2:
+    if i in dict:
+        dict[i] = dict[i] + 1
+    else:
+        dict[i] = 1
+total = 0
+print(arr1)
+for i in arr1:
+    if i in dict:
+        total += dict[i] * i
+print(total)
